@@ -23,9 +23,17 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'gruvbox-community/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/nerdtree'
 
 " Initialize plugin system
 call plug#end()
 
 colorscheme gruvbox
+
+" Airline configurations
+let g:airline_theme='gruvbox'
