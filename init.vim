@@ -1,5 +1,6 @@
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -14,11 +15,11 @@ Plug 'andweeb/presence.nvim'
 call plug#end()
 
 " Plugins config
-colorscheme dracula
-set background=dark
+colorscheme catppuccin-mocha
+" set background=dark
 
 " Airline configurations
-let g:airline_theme='dracula'
+let g:airline_theme='catppuccin-mocha'
 
 " NVIM configs
 set hidden
