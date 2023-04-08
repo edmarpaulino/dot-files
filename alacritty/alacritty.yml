@@ -1,0 +1,25 @@
+import:
+  # uncomment the flavour you want below:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
+#  - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
+
+env:
+  TERM: xterm-256color
+
+# transparency
+window:
+  opacity: 0.9
+
+font:
+  size: 12
+  normal:
+    family: Fira Code Nerd Font
+    style: Medium 
+  bold:
+    family: Fira Code Nerd Font
+    style: Bold
+  italic:
+    family: Fira Code Nerd Font
+    style: Italic
