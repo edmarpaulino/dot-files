@@ -13,6 +13,8 @@ window:
   opacity: 0.9
 
 font:
+  # family: Perfect DOS VGA 437 Win
+  # family: Fira Code Nerd Font
   size: 12
   normal:
     family: Fira Code Nerd Font
