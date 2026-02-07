@@ -1,0 +1,106 @@
+{
+  // editor
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'FiraCode Nerd Font', 'Cascadia Code'",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 14,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": true,
+  "editor.insertSpaces": true,
+  "editor.lineHeight": 2,
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "none",
+  "editor.renderLineHighlightOnlyWhenFocus": false,
+  "editor.renderWhitespace": "selection",
+  "editor.scrollbar.horizontal": "auto",
+  "editor.scrollbar.vertical": "auto",
+  "editor.smoothScrolling": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "off",
+
+  // explorer
+  "explorer.compactFolders": false,
+  "explorer.incrementalNaming": "smart",
+
+  // extensions
+  "extensions.ignoreRecommendations": true,
+
+  // formatter
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // javascript/typescript
+  "javascript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // linter
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+
+  // prettier
+  "prettier.enable": true,
+  "prettier.endOfLine": "auto",
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "none",
+  "prettier.useTabs": false,
+
+  // terminal
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.env.linux": {},
+  "terminal.integrated.env.osx": {},
+  "terminal.integrated.env.windows": {},
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', 'FiraCode Nerd Font', 'Cascadia Code'",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.scrollback": 5000,
+  "terminal.integrated.smoothScrolling": true,
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.tabs.location": "left",
+
+  // ui
+  "breadcrumbs.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "notebook.output.scrolling": true,
+  "notebook.output.textLineLimit": 1000,
+  "window.titleBarStyle": "custom",
+  "window.zoomPerWindow": true,
+
+  // workbench
+  "workbench.iconTheme": "bearded-icons",
+  "workbench.layoutControl.enabled": false,
+  "workbench.reduceMotion": "off",
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "workbench.statusBar.visible": true,
+  "workbench.tree.indent": 20,
+  "workbench.tree.renderIndentGuides": "always"
+}
