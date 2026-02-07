@@ -1,27 +1,52 @@
 {
-  "breadcrumbs.enabled": true,
+  // copilot
+  "github.copilot.enable": {
+    "*": false
+  },
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "You are an expert Git commit message generator. Analyze the provided diff and create a concise, meaningful commit message following the Conventional Commits format: <type>: <description>\n\nTypes:\n- feat: a new feature or enhancement\n- fix: a bug fix\n- docs: documentation changes\n- style: code style changes (formatting, semicolons, etc)\n- refactor: code changes that neither fix bugs nor add features\n- perf: performance improvements\n- test: adding or correcting tests\n- chore: changes to build process, dependencies, etc\n- ci: CI configuration changes\n- release: release version tags\n\nGuidelines for quality commit messages:\n1. Be specific about what changed, but concise (under 72 characters if possible)\n2. Use present tense, imperative mood (e.g., \"add\" not \"added\" or \"adds\")\n3. Focus on the \"what\" and \"why\" rather than the \"how\"\n4. Don't mention file names in the message\n5. Start with lowercase letter\n6. Don't end with a period\n\nExamples:\n✅ feat: implement user authentication flow\n✅ fix: resolve null pointer in payment processing\n✅ refactor: simplify error handling logic\n✅ perf: optimize database query execution\n✅ test: add unit tests for validate form type service\n\nNow analyze this diff and provide only the commit message without any additional text."
+    }
+  ],
+
+  // editor
   "editor.accessibilitySupport": "off",
-  "editor.bracketPairColorization.enabled": true,
-  "editor.formatOnSave": true,
-  "editor.fontSize": 14,
-  "editor.insertSpaces": true,
-  "editor.lineHeight": 2,
-  "editor.minimap.enabled": false,
-  "editor.renderLineHighlight": "none",
-  "editor.renderLineHighlightOnlyWhenFocus": false,
-  "editor.renderWhitespace": "selection",
-  "editor.scrollbar.vertical": "auto",
-  "editor.scrollbar.horizontal": "auto",
-  "editor.tabSize": 2,
-  "editor.fontFamily": "'JetBrainsMono Nerd Font','Cascadia Code',  'FiraCode Nerd Font'",
+  "editor.cursorBlinking": "smooth",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'FiraCode Nerd Font', 'Cascadia Code'",
   "editor.fontLigatures": false,
-  // "editor.fontLigatures": "'calt', 'ss01'",
-  "editor.wordWrap": "off",
+  "editor.fontSize": 13,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.letterSpacing": 0.3,
+  "editor.lineHeight": 1.6,
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.renderLineHighlight": "none",
+  "editor.renderWhitespace": "selection",
+  "editor.smoothScrolling": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 120,
+
+  // explorer
   "explorer.compactFolders": false,
   "explorer.incrementalNaming": "smart",
-  "extensions.autoUpdate": true,
+
+  // extensions
   "extensions.ignoreRecommendations": true,
 
+  // files
+  "files.autoSave": "off",
+
+  // formatter
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -32,198 +57,65 @@
     },
     "editor.suggest.insertMode": "replace"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[go]": {
-    "editor.tabSize": 4
-  },
-  "[python]": {
-    "editor.tabSize": 4
-  },
-  "css.lint.unknownAtRules": "ignore",
-  "scss.lint.unknownAtRules": "ignore",
-  "prettier.enable": true,
-  "prettier.endOfLine": "auto",
-  "prettier.semi": false,
-  "prettier.singleQuote": true,
-  "prettier.tabWidth": 2,
-  "prettier.trailingComma": "none",
-  "prettier.useTabs": false,
-  "terminal.integrated.scrollback": 5000,
-  "terminal.integrated.env.osx": {},
-  "terminal.integrated.env.windows": {},
-  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', 'Cascadia Code', 'FiraCode Nerd Font'",
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.lineHeight": 1.5,
-  "terminal.integrated.profiles.linux": {
-    "bash": {
-      "path": "/usr/bin/bash",
-      "icon": "terminal-bash",
-      "color": "terminal.ansiGreen"
-    },
-    "zsh": {
-      "path": "/usr/bin/zsh",
-      "icon": "terminal",
-      "color": "terminal.ansiYellow"
-    }
-  },
-  "terminal.integrated.profiles.osx": {
-    "bash": {
-      "path": "bash",
-      "args": ["-l"],
-      "icon": "terminal-bash"
-    },
-    "zsh": {
-      "path": "zsh",
-      "args": ["-l"],
-      "icon": "terminal"
-    },
-    "run": {
-      "path": "zsh",
-      "args": ["-l"],
-      "icon": "run",
-      "color": "terminal.ansiBlue",
-      "overrideName": true
-    },
-    "watch": {
-      "path": "zsh",
-      "args": ["-l"],
-      "icon": "beaker",
-      "color": "terminal.ansiYellow",
-      "overrideName": true
-    },
-    "git": {
-      "path": "zsh",
-      "args": ["-l"],
-      "icon": "git-branch",
-      "color": "terminal.ansiGreen",
-      "overrideName": true
-    },
-    "prisma": {
-      "path": "zsh",
-      "args": ["-l"],
-      "icon": "database",
-      "color": "terminal.ansiCyan",
-      "overrideName": true
-    }
-  },
-  "terminal.integrated.profiles.windows": {
-    "PowerShell": {
-      "source": "PowerShell",
-      "icon": "terminal-powershell"
-    },
-    "Command Prompt": {
-      "path": [
-        "${env:windir}\\Sysnative\\cmd.exe",
-        "${env:windir}\\System32\\cmd.exe"
-      ],
-      "args": [],
-      "icon": "terminal-cmd"
-    },
-    "Git Bash": {
-      "source": "Git Bash"
-    },
-    "run": {
-      "source": "PowerShell",
-      "icon": "run",
-      "color": "terminal.ansiBlue",
-      "overrideName": true
-    },
-    "watch": {
-      "source": "PowerShell",
-      "icon": "beaker",
-      "color": "terminal.ansiYellow",
-      "overrideName": true
-    },
-    "git": {
-      "source": "PowerShell",
-      "icon": "git-branch",
-      "color": "terminal.ansiGreen",
-      "overrideName": true
-    }
-  },
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "update.showReleaseNotes": false,
-  "window.commandCenter": false,
-  "window.titleBarStyle": "custom",
-  "workbench.statusBar.visible": true,
-  "workbench.tree.renderIndentGuides": "always",
-  "javascript.suggest.autoImports": true,
-  "typescript.suggest.autoImports": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "github.copilot.enable": {
-    "*": false,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  },
-  "github.copilot.chat.commitMessageGeneration.instructions": [
-    {
-      "text": "You are an expert Git commit message generator. Analyze the provided diff and create a concise, meaningful commit message following the Conventional Commits format: <type>: <description>\n\nTypes:\n- feat: a new feature or enhancement\n- fix: a bug fix\n- docs: documentation changes\n- style: code style changes (formatting, semicolons, etc)\n- refactor: code changes that neither fix bugs nor add features\n- perf: performance improvements\n- test: adding or correcting tests\n- chore: changes to build process, dependencies, etc\n- ci: CI configuration changes\n- release: release version tags\n\nGuidelines for quality commit messages:\n1. Be specific about what changed, but concise (under 72 characters if possible)\n2. Use present tense, imperative mood (e.g., \"add\" not \"added\" or \"adds\")\n3. Focus on the \"what\" and \"why\" rather than the \"how\"\n4. Don't mention file names in the message\n5. Start with lowercase letter\n6. Don't end with a period\n\nExamples:\n✅ feat: implement user authentication flow\n✅ fix: resolve null pointer in payment processing\n✅ refactor: simplify error handling logic\n✅ perf: optimize database query execution\n✅ test: add unit tests for validate form type service\n\nNow analyze this diff and provide only the commit message without any additional text."
-    }
-  ],
-  "diffEditor.ignoreTrimWhitespace": true,
-  "workbench.tree.indent": 20,
-  "window.zoomPerWindow": true,
-  "notebook.output.textLineLimit": 1000,
-  "editor.smoothScrolling": true,
-  "editor.cursorBlinking": "smooth",
-  "workbench.reduceMotion": "off",
-  "terminal.integrated.smoothScrolling": true,
-  "workbench.startupEditor": "none",
-  "terminal.integrated.env.linux": {},
-  "indentRainbow.colors": [
-    "rgba(3, 4, 94,0.15)",
-    "rgba(2, 62, 138,0.15)",
-    "rgba(0, 119, 182, 0.15)",
-    "rgba(0, 150, 199,0.15)",
-    "rgba(0, 180, 216,0.15)",
-    "rgba(72, 202, 228,0.15)",
-    "rgba(144, 224, 239,0.15)",
-    "rgba(144, 224, 239,0.1)",
-    "rgba(144, 224, 239,0.05)",
-    "rgba(144, 224, 239,0.025)"
-  ],
-  "editor.guides.bracketPairs": true,
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // "git.autofetch": true,
-  "workbench.sideBar.location": "right",
-  "terminal.integrated.tabs.location": "left",
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[html]": {
+  "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "chat.fontSize": 14,
-  "chat.fontFamily": "'JetBrainsMono Nerd Font', 'Cascadia Code', 'FiraCode Nerd Font'",
-  "chat.editor.fontSize": 14,
-  "chat.editor.fontFamily": "'JetBrainsMono Nerd Font', 'Cascadia Code', 'FiraCode Nerd Font'",
-  "chat.editor.lineHeight": 1.5,
-  "chat.viewSessions.enabled": false,
-  "chat.mcp.serverSampling": {},
-  "chat.mcp.gallery.enabled": true,
-  "workbench.layoutControl.enabled": false,
-  "kilo-code.allowedCommands": ["git log", "git diff", "git show"],
-  "kilo-code.deniedCommands": [],
-  "notebook.output.scrolling": true,
-  "geminicodeassist.project": "zinc-appliance-nqgrs",
-  "geminicodeassist.displayInlineContextHint": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // git
+  "git.autofetch": true,
+  "git.confirmSync": false,
+
+  // javascript/typescript
+  "javascript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // linter
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+
+  // prettier
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "none",
+  "prettier.useTabs": false,
+
+  // terminal
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', 'FiraCode Nerd Font', 'Cascadia Code'",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.lineHeight": 1.6,
+  "terminal.integrated.scrollback": 50000,
+  "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.stickyScroll.enabled": false,
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "terminal.integrated.tabs.location": "left",
+
+  // ui
+  "diffEditor.ignoreTrimWhitespace": true,
+  "notebook.output.scrolling": true,
+  "notebook.output.textLineLimit": 1000,
+  "window.titleBarStyle": "custom",
+  "window.zoomPerWindow": true,
+
+  // workbench
   "workbench.iconTheme": "bearded-icons",
-  "githubPullRequests.pullBranch": "never",
-  "chat.agent.maxRequests": 50,
-  "chat.useAgentSkills": true,
-  "chat.useNestedAgentsMdFiles": true,
-  "githubPullRequests.pullRequestDescription": "Copilot",
-  "kilo-code.debug": false
+  "workbench.layoutControl.enabled": false,
+  "workbench.sideBar.location": "right",
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 20,
+  "workbench.tree.renderIndentGuides": "always",
+  "kilo-code.debug": false,
+  "kilo-code.allowedCommands": ["git log", "git diff", "git show"],
+  "kilo-code.deniedCommands": []
 }
