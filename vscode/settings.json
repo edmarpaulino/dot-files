@@ -3,7 +3,6 @@
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
   "editor.formatOnSave": true,
-  "editor.fontLigatures": false,
   "editor.fontSize": 14,
   "editor.insertSpaces": true,
   "editor.lineHeight": 2,
@@ -14,7 +13,9 @@
   "editor.scrollbar.vertical": "auto",
   "editor.scrollbar.horizontal": "auto",
   "editor.tabSize": 2,
-  "editor.fontFamily": "'JetBrainsMono Nerd Font', 'FiraCode Nerd Font'",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font','Cascadia Code',  'FiraCode Nerd Font'",
+  "editor.fontLigatures": false,
+  // "editor.fontLigatures": "'calt', 'ss01'",
   "editor.wordWrap": "off",
   "explorer.compactFolders": false,
   "explorer.incrementalNaming": "smart",
@@ -25,7 +26,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.json-language-features",
     "editor.quickSuggestions": {
       "strings": true
     },
@@ -37,16 +38,11 @@
   "[go]": {
     "editor.tabSize": 4
   },
+  "[python]": {
+    "editor.tabSize": 4
+  },
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
-  "[python]": {
-    "diffEditor.ignoreTrimWhitespace": false,
-    "gitlens.codeLens.symbolScopes": ["!Module"],
-    "editor.formatOnSave": true,
-    "editor.wordBasedSuggestions": "off",
-    "editor.tabSize": 4,
-    "editor.defaultFormatter": "ms-python.autopep8"
-  },
   "prettier.enable": true,
   "prettier.endOfLine": "auto",
   "prettier.semi": false,
@@ -54,12 +50,12 @@
   "prettier.tabWidth": 2,
   "prettier.trailingComma": "none",
   "prettier.useTabs": false,
-  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.scrollback": 5000,
   "terminal.integrated.env.osx": {},
   "terminal.integrated.env.windows": {},
-  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', 'Monaspace Neon Var', 'FiraCode Nerd Font'",
+  "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', 'Cascadia Code', 'FiraCode Nerd Font'",
   "terminal.integrated.fontSize": 14,
-  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.lineHeight": 1.5,
   "terminal.integrated.profiles.linux": {
     "bash": {
       "path": "/usr/bin/bash",
@@ -151,7 +147,6 @@
   "update.showReleaseNotes": false,
   "window.commandCenter": false,
   "window.titleBarStyle": "custom",
-  "workbench.layoutControl.enabled": false,
   "workbench.statusBar.visible": true,
   "workbench.tree.renderIndentGuides": "always",
   "javascript.suggest.autoImports": true,
@@ -159,12 +154,11 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false
   },
-  "chat.todoListTool.enabled": true,
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "text": "You are an expert Git commit message generator. Analyze the provided diff and create a concise, meaningful commit message following the Conventional Commits format: <type>: <description>\n\nTypes:\n- feat: a new feature or enhancement\n- fix: a bug fix\n- docs: documentation changes\n- style: code style changes (formatting, semicolons, etc)\n- refactor: code changes that neither fix bugs nor add features\n- perf: performance improvements\n- test: adding or correcting tests\n- chore: changes to build process, dependencies, etc\n- ci: CI configuration changes\n- release: release version tags\n\nGuidelines for quality commit messages:\n1. Be specific about what changed, but concise (under 72 characters if possible)\n2. Use present tense, imperative mood (e.g., \"add\" not \"added\" or \"adds\")\n3. Focus on the \"what\" and \"why\" rather than the \"how\"\n4. Don't mention file names in the message\n5. Start with lowercase letter\n6. Don't end with a period\n\nExamples:\n✅ feat: implement user authentication flow\n✅ fix: resolve null pointer in payment processing\n✅ refactor: simplify error handling logic\n✅ perf: optimize database query execution\n✅ test: add unit tests for validate form type service\n\nNow analyze this diff and provide only the commit message without any additional text."
@@ -173,12 +167,11 @@
   "diffEditor.ignoreTrimWhitespace": true,
   "workbench.tree.indent": 20,
   "window.zoomPerWindow": true,
-  "notebook.output.textLineLimit": 50,
+  "notebook.output.textLineLimit": 1000,
   "editor.smoothScrolling": true,
   "editor.cursorBlinking": "smooth",
   "workbench.reduceMotion": "off",
   "terminal.integrated.smoothScrolling": true,
-  "go.toolsManagement.autoUpdate": true,
   "workbench.startupEditor": "none",
   "terminal.integrated.env.linux": {},
   "indentRainbow.colors": [
@@ -197,10 +190,40 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "git.autofetch": true,
+  // "git.autofetch": true,
   "workbench.sideBar.location": "right",
   "terminal.integrated.tabs.location": "left",
-  "workbench.iconTheme": "bearded-icons",
   "github.copilot.nextEditSuggestions.enabled": true,
-  "workbench.colorTheme": "Bearded Theme Monokai Metallian"
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "chat.fontSize": 14,
+  "chat.fontFamily": "'JetBrainsMono Nerd Font', 'Cascadia Code', 'FiraCode Nerd Font'",
+  "chat.editor.fontSize": 14,
+  "chat.editor.fontFamily": "'JetBrainsMono Nerd Font', 'Cascadia Code', 'FiraCode Nerd Font'",
+  "chat.editor.lineHeight": 1.5,
+  "chat.viewSessions.enabled": false,
+  "chat.mcp.serverSampling": {},
+  "chat.mcp.gallery.enabled": true,
+  "workbench.layoutControl.enabled": false,
+  "kilo-code.allowedCommands": ["git log", "git diff", "git show"],
+  "kilo-code.deniedCommands": [],
+  "notebook.output.scrolling": true,
+  "geminicodeassist.project": "zinc-appliance-nqgrs",
+  "geminicodeassist.displayInlineContextHint": false,
+  "terminal.integrated.stickyScroll.enabled": false,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "workbench.iconTheme": "bearded-icons",
+  "githubPullRequests.pullBranch": "never",
+  "chat.agent.maxRequests": 50,
+  "chat.useAgentSkills": true,
+  "chat.useNestedAgentsMdFiles": true,
+  "githubPullRequests.pullRequestDescription": "Copilot",
+  "kilo-code.debug": false
 }
