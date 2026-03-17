@@ -1,0 +1,23 @@
+{
+  "name": "Monokai Stone",
+  "black": "#2A2D33",
+  "red": "#fc6a67",
+  "green": "#a9dc76",
+  "yellow": "#ffd866",
+  "blue": "#78dce8",
+  "purple": "#e991e3",
+  "cyan": "#78e8c6",
+  "white": "#9AA2A6",
+  "brightBlack": "#6B7277",
+  "brightRed": "#ff6188",
+  "brightGreen": "#b7d175",
+  "brightYellow": "#fc9867",
+  "brightBlue": "#78dce8",
+  "brightPurple": "#ab9df2",
+  "brightCyan": "#78e8c6",
+  "brightWhite": "#ffffff",
+  "background": "#2A2D33",
+  "foreground": "#9AA2A6",
+  "selectionBackground": "#5A616E",
+  "cursorColor": "#9AA2A6"
+}

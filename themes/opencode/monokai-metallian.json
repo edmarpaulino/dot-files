@@ -1,0 +1,120 @@
+{
+  "$schema": "https://opencode.ai/theme.json",
+  "defs": {
+    "blue": "#78dce8",
+    "green": "#a9dc76",
+    "greenAlt": "#b7d175",
+    "orange": "#fc9867",
+    "pink": "#e991e3",
+    "purple": "#ab9df2",
+    "red": "#fc6a67",
+    "salmon": "#ff6188",
+    "turquoize": "#78e8c6",
+    "yellow": "#ffd866",
+    "metallianBase": "#1e212b",
+    "metallianPanel": "#242834",
+    "metallianElement": "#2a2f3d",
+    "metallianBorder": "#33384a",
+    "metallianBorderActive": "#40475c",
+    "metallianText": "#98a2b5",
+    "metallianTextMuted": "#687182"
+  },
+  "theme": {
+    "primary": {
+      "dark": "blue",
+      "light": "blue"
+    },
+    "secondary": {
+      "dark": "purple",
+      "light": "purple"
+    },
+    "accent": {
+      "dark": "orange",
+      "light": "orange"
+    },
+    "error": {
+      "dark": "red",
+      "light": "red"
+    },
+    "warning": {
+      "dark": "yellow",
+      "light": "yellow"
+    },
+    "success": {
+      "dark": "green",
+      "light": "green"
+    },
+    "info": {
+      "dark": "blue",
+      "light": "blue"
+    },
+    "text": {
+      "dark": "metallianText",
+      "light": "metallianText"
+    },
+    "textMuted": {
+      "dark": "metallianTextMuted",
+      "light": "metallianTextMuted"
+    },
+    "background": {
+      "dark": "metallianBase",
+      "light": "metallianBase"
+    },
+    "backgroundPanel": {
+      "dark": "metallianPanel",
+      "light": "metallianPanel"
+    },
+    "backgroundElement": {
+      "dark": "metallianElement",
+      "light": "metallianElement"
+    },
+    "border": {
+      "dark": "metallianBorder",
+      "light": "metallianBorder"
+    },
+    "borderActive": {
+      "dark": "metallianBorderActive",
+      "light": "metallianBorderActive"
+    },
+    "borderSubtle": {
+      "dark": "metallianPanel",
+      "light": "metallianPanel"
+    },
+    "syntaxComment": {
+      "dark": "metallianTextMuted",
+      "light": "metallianTextMuted"
+    },
+    "syntaxKeyword": {
+      "dark": "pink",
+      "light": "pink"
+    },
+    "syntaxFunction": {
+      "dark": "green",
+      "light": "green"
+    },
+    "syntaxVariable": {
+      "dark": "metallianText",
+      "light": "metallianText"
+    },
+    "syntaxString": {
+      "dark": "yellow",
+      "light": "yellow"
+    },
+    "syntaxNumber": {
+      "dark": "purple",
+      "light": "purple"
+    },
+    "syntaxType": {
+      "dark": "blue",
+      "light": "blue"
+    },
+    "syntaxOperator": {
+      "dark": "salmon",
+      "light": "salmon"
+    },
+    "syntaxPunctuation": {
+      "dark": "metallianText",
+      "light": "metallianText"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Monokai Metallian",
+  "black": "#1e212b",
+  "red": "#fc6a67",
+  "green": "#a9dc76",
+  "yellow": "#ffd866",
+  "blue": "#78dce8",
+  "purple": "#e991e3",
+  "cyan": "#78e8c6",
+  "white": "#98a2b5",
+  "brightBlack": "#687182",
+  "brightRed": "#ff6188",
+  "brightGreen": "#b7d175",
+  "brightYellow": "#fc9867",
+  "brightBlue": "#78dce8",
+  "brightPurple": "#ab9df2",
+  "brightCyan": "#78e8c6",
+  "brightWhite": "#ffffff",
+  "background": "#1e212b",
+  "foreground": "#98a2b5",
+  "selectionBackground": "#40475c",
+  "cursorColor": "#98a2b5"
+}

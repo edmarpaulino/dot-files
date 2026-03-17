@@ -1,0 +1,118 @@
+{
+  "$schema": "https://opencode.ai/theme.json",
+  "defs": {
+    "blue": "#78dce8",
+    "green": "#a9dc76",
+    "orange": "#fc9867",
+    "pink": "#e991e3",
+    "purple": "#ab9df2",
+    "red": "#fc6a67",
+    "salmon": "#ff6188",
+    "yellow": "#ffd866",
+    "stoneBase": "#2A2D33",
+    "stonePanel": "#32363D",
+    "stoneElement": "#3B3F47",
+    "stoneBorder": "#444952",
+    "stoneBorderActive": "#5A616E",
+    "stoneText": "#9AA2A6",
+    "stoneTextMuted": "#6B7277"
+  },
+  "theme": {
+    "primary": {
+      "dark": "blue",
+      "light": "blue"
+    },
+    "secondary": {
+      "dark": "purple",
+      "light": "purple"
+    },
+    "accent": {
+      "dark": "orange",
+      "light": "orange"
+    },
+    "error": {
+      "dark": "red",
+      "light": "red"
+    },
+    "warning": {
+      "dark": "yellow",
+      "light": "yellow"
+    },
+    "success": {
+      "dark": "green",
+      "light": "green"
+    },
+    "info": {
+      "dark": "blue",
+      "light": "blue"
+    },
+    "text": {
+      "dark": "stoneText",
+      "light": "stoneText"
+    },
+    "textMuted": {
+      "dark": "stoneTextMuted",
+      "light": "stoneTextMuted"
+    },
+    "background": {
+      "dark": "stoneBase",
+      "light": "stoneBase"
+    },
+    "backgroundPanel": {
+      "dark": "stonePanel",
+      "light": "stonePanel"
+    },
+    "backgroundElement": {
+      "dark": "stoneElement",
+      "light": "stoneElement"
+    },
+    "border": {
+      "dark": "stoneBorder",
+      "light": "stoneBorder"
+    },
+    "borderActive": {
+      "dark": "stoneBorderActive",
+      "light": "stoneBorderActive"
+    },
+    "borderSubtle": {
+      "dark": "stonePanel",
+      "light": "stonePanel"
+    },
+    "syntaxComment": {
+      "dark": "stoneTextMuted",
+      "light": "stoneTextMuted"
+    },
+    "syntaxKeyword": {
+      "dark": "pink",
+      "light": "pink"
+    },
+    "syntaxFunction": {
+      "dark": "green",
+      "light": "green"
+    },
+    "syntaxVariable": {
+      "dark": "stoneText",
+      "light": "stoneText"
+    },
+    "syntaxString": {
+      "dark": "yellow",
+      "light": "yellow"
+    },
+    "syntaxNumber": {
+      "dark": "purple",
+      "light": "purple"
+    },
+    "syntaxType": {
+      "dark": "blue",
+      "light": "blue"
+    },
+    "syntaxOperator": {
+      "dark": "salmon",
+      "light": "salmon"
+    },
+    "syntaxPunctuation": {
+      "dark": "stoneText",
+      "light": "stoneText"
+    }
+  }
+}
