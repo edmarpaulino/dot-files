@@ -1,0 +1,58 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#a9dc76",
+          "style": "plain",
+          "type": "session",
+          "template": "{{ if eq .Shell \"pwsh\" }}\ue70f {{ else }}\uf17c {{ end }}{{ .UserName }} <#98a2b5>on</> "
+        },
+        {
+          "foreground": "#78dce8",
+          "properties": {
+            "folder_separator_icon": "/",
+            "style": "agnoster_full",
+            "home_icon": "~"
+          },
+          "style": "plain",
+          "template": "\uf07b {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#ab9df2",
+          "style": "plain",
+          "type": "git",
+          "properties": {
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "template": "\uf09b {{ .HEAD }}{{ if .Working.Changed }} <#fc9867>\uf044 {{ .Working.String }}</>{{ end }}{{ if .Staging.Changed }} <#a9dc76>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <#ffd866>\ueb4b {{ .StashCount }}</>{{ end }} "
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#fc6a67",
+          "style": "plain",
+          "template": "\ue3bf ",
+          "type": "root"
+        },
+        {
+          "foreground": "#e991e3",
+          "style": "plain",
+          "template": "# ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 4
+}
