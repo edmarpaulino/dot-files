@@ -7,8 +7,8 @@
         {
           "foreground": "#45F1C2",
           "style": "plain",
-          "template": "\ueb99 {{ .UserName }} on",
-          "type": "session"
+          "type": "session",
+          "template": "{{ if eq .Shell \"pwsh\" }}\ue70f {{ else if eq .Shell \"zsh\" }}\uf312 {{ end }}{{ .UserName }} on "
         },
         {
           "foreground": "#0CA0D8",
