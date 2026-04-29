@@ -1,5 +1,14 @@
 export ZSH="$HOME/.oh-my-zsh"
 
+# zsh-autosuggestions: Disable suggestions for big buffers (essential for pasting)
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=32
+
+# zsh-autosuggestions: Disable suggestions asynchronously (don't lock the keyboard)
+export ZSH_AUTOSUGGEST_USE_ASYNC=true
+
+# zsh-autosuggestions: Forces the plugin to ignore "bracketed paste" events
+zstyle ':bracketed-paste-magic' active-widgets '.self-*'
+
 # ZSH_THEME="robbyrussell"
 ZSH_THEME=""
 
