@@ -25,12 +25,24 @@ format_compact() {
     fi
 }
 
-# Return color by usage percentage
+# Return color by usage percentage (context window)
 get_color_by_pct() {
     local pct="$1"
     if [ "$pct" -le 40 ]; then
         echo "$GREEN"
     elif [ "$pct" -le 60 ]; then
+        echo "$YELLOW"
+    else
+        echo "$RED"
+    fi
+}
+
+# Return color by rate limit usage percentage
+get_rate_color_by_pct() {
+    local pct="$1"
+    if [ "$pct" -le 69 ]; then
+        echo "$GREEN"
+    elif [ "$pct" -le 89 ]; then
         echo "$YELLOW"
     else
         echo "$RED"
@@ -58,13 +70,6 @@ MODEL=$(echo "$input" | jq -r '.model.display_name // .model.id // "N/A"' | sed 
 # Context Window Used Percentage
 PCT=$(echo "$input" | jq -r '.context_window.used_percentage // 0' | cut -d. -f1)
 
-# Input and Output Tokens
-IN_TOKENS=$(echo "$input" | jq -r '.context_window.total_input_tokens // 0')
-IN_TOKENS_FMT=$(format_compact "$IN_TOKENS")
-OUT_TOKENS=$(echo "$input" | jq -r '.context_window.total_output_tokens // 0')
-OUT_TOKENS_FMT=$(format_compact "$OUT_TOKENS")
-
-
 # Progress Bar
 BAR_WIDTH=10
 BAR=$(build_bar "$PCT" "$BAR_WIDTH")
@@ -87,45 +92,7 @@ if [ -n "$BRANCH" ]; then
     GIT_INFO="${CYAN}($BRANCH)${RESET} ${GREEN}+$STAGED${RESET} ${YELLOW}~$MODIFIED${RESET} ${RED}?$UNTRACKED${RESET}"
 fi
 
-# Total Cost in USD
-TOTAL_COST_USD=$(echo "$input" | jq -r '.cost.total_cost_usd // 0')
-
-format_usd() {
-    local value="$1"
-    awk -v n="$value" 'BEGIN { printf "$%.4f", n }'
-}
-
-TOTAL_COST_USD_FMT=$(format_usd "$TOTAL_COST_USD")
-
 # Rate Limits
-FIVE_HOUR_RESET_TS=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // 0')
-SEVEN_DAY_RESET_TS=$(echo "$input" | jq -r '.rate_limits.seven_day.resets_at // 0')
-format_reset_time() {
-    local ts="$1"
-    if [ "$ts" -le 0 ]; then
-        echo "N/A"
-        return
-    fi
-    date -d "@$ts" "+%d/%m %H:%M"
-}
-format_time_left() {
-    local ts="$1"
-    local now
-    now=$(date +%s)
-    local diff=$((ts - now))
-    if [ "$diff" -le 0 ]; then
-        echo "resetando agora"
-        return
-    fi
-    local h=$((diff / 3600))
-    local m=$(((diff % 3600) / 60))
-    echo "${h}h ${m}m"
-}
-FIVE_HOUR_RESET_AT=$(format_reset_time "$FIVE_HOUR_RESET_TS")
-SEVEN_DAY_RESET_AT=$(format_reset_time "$SEVEN_DAY_RESET_TS")
-FIVE_HOUR_LEFT=$(format_time_left "$FIVE_HOUR_RESET_TS")
-SEVEN_DAY_LEFT=$(format_time_left "$SEVEN_DAY_RESET_TS")
-
 FIVE_HOUR_USED=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // 0')
 SEVEN_DAY_USED=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // 0')
 
@@ -142,16 +109,14 @@ FIVE_HOUR_PCT=$(printf "%.0f" "$FIVE_HOUR_USED")
 SEVEN_DAY_PCT=$(printf "%.0f" "$SEVEN_DAY_USED")
 FIVE_HOUR_BAR=$(build_bar "$FIVE_HOUR_PCT" "$RATE_BAR_WIDTH")
 SEVEN_DAY_BAR=$(build_bar "$SEVEN_DAY_PCT" "$RATE_BAR_WIDTH")
-FIVE_HOUR_COLOR=$(get_color_by_pct "$FIVE_HOUR_PCT")
-SEVEN_DAY_COLOR=$(get_color_by_pct "$SEVEN_DAY_PCT")
+FIVE_HOUR_COLOR=$(get_rate_color_by_pct "$FIVE_HOUR_PCT")
+SEVEN_DAY_COLOR=$(get_rate_color_by_pct "$SEVEN_DAY_PCT")
 
 # Lines
 
-LINE_ONE="🤖 ${MAGENTA}$MODEL${RESET} ${CYAN}($CONTEXT_WINDOW_SIZE_FMT)${RESET} | 🧠 ${BOLD}${BAR_COLOR}$BAR${RESET} $PCT% | 📥 ${GREEN}${IN_TOKENS_FMT}${RESET} | 📤 ${YELLOW}${OUT_TOKENS_FMT}${RESET} | 💵 ${TOTAL_COST_USD_FMT}"
+LINE_ONE="🤖 ${MAGENTA}$MODEL${RESET} ${CYAN}($CONTEXT_WINDOW_SIZE_FMT)${RESET} | 🧠 ${BOLD}${BAR_COLOR}$BAR${RESET} $PCT% | ⏱ 5h ${BOLD}${FIVE_HOUR_COLOR}${FIVE_HOUR_BAR}${RESET} ${FIVE_HOUR_USED_FMT} | 📆 7d ${BOLD}${SEVEN_DAY_COLOR}${SEVEN_DAY_BAR}${RESET} ${SEVEN_DAY_USED_FMT}"
 
-LINE_TWO="⏱ 5h ${BOLD}${FIVE_HOUR_COLOR}${FIVE_HOUR_BAR}${RESET} ${FIVE_HOUR_USED_FMT} 🔄️ ${MAGENTA}$FIVE_HOUR_LEFT${RESET} | 📆 7d ${BOLD}${SEVEN_DAY_COLOR}${SEVEN_DAY_BAR}${RESET} ${SEVEN_DAY_USED_FMT} 🔄️ ${MAGENTA}$SEVEN_DAY_LEFT${RESET}"
-
-LINE_THREE="📂 ${BOLD}$(basename "$PWD")${RESET} $GIT_INFO"
+LINE_TWO="📂 ${BOLD}$(basename "$PWD")${RESET} $GIT_INFO"
 
 # Status Line
-echo -e "${LINE_ONE} \n ${LINE_TWO} \n ${LINE_THREE}"
+echo -e "${LINE_ONE} \n ${LINE_TWO}"
