@@ -95,26 +95,47 @@ fi
 # Rate Limits
 FIVE_HOUR_USED=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // 0')
 SEVEN_DAY_USED=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // 0')
+FIVE_HOUR_RESET=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // 0')
+SEVEN_DAY_RESET=$(echo "$input" | jq -r '.rate_limits.seven_day.resets_at // 0')
 
 # Format percentage
 format_pct() {
     local value="$1"
     awk -v n="$value" 'BEGIN { printf "%.1f%%", n }'
 }
+
+# Format time until a Unix-epoch reset as e.g. "6d23h", "4h32min" or "32min"
+format_reset() {
+    local reset_at="$1"
+    local now diff days hours mins
+    now=$(date +%s)
+    diff=$((reset_at - now))
+    [ "$diff" -lt 0 ] && diff=0
+    days=$((diff / 86400))
+    hours=$(((diff % 86400) / 3600))
+    mins=$(((diff % 3600) / 60))
+    if [ "$days" -gt 0 ]; then
+        echo "${days}d${hours}h"
+    elif [ "$hours" -gt 0 ]; then
+        echo "${hours}h${mins}min"
+    else
+        echo "${mins}min"
+    fi
+}
+
 FIVE_HOUR_USED_FMT=$(format_pct "$FIVE_HOUR_USED")
 SEVEN_DAY_USED_FMT=$(format_pct "$SEVEN_DAY_USED")
+FIVE_HOUR_RESET_FMT=$(format_reset "$FIVE_HOUR_RESET")
+SEVEN_DAY_RESET_FMT=$(format_reset "$SEVEN_DAY_RESET")
 
-RATE_BAR_WIDTH=10
 FIVE_HOUR_PCT=$(printf "%.0f" "$FIVE_HOUR_USED")
 SEVEN_DAY_PCT=$(printf "%.0f" "$SEVEN_DAY_USED")
-FIVE_HOUR_BAR=$(build_bar "$FIVE_HOUR_PCT" "$RATE_BAR_WIDTH")
-SEVEN_DAY_BAR=$(build_bar "$SEVEN_DAY_PCT" "$RATE_BAR_WIDTH")
 FIVE_HOUR_COLOR=$(get_rate_color_by_pct "$FIVE_HOUR_PCT")
 SEVEN_DAY_COLOR=$(get_rate_color_by_pct "$SEVEN_DAY_PCT")
 
 # Lines
 
-LINE_ONE="🤖 ${MAGENTA}$MODEL${RESET} ${CYAN}($CONTEXT_WINDOW_SIZE_FMT)${RESET} | 🧠 ${BOLD}${BAR_COLOR}$BAR${RESET} $PCT% | ⏱ 5h ${BOLD}${FIVE_HOUR_COLOR}${FIVE_HOUR_BAR}${RESET} ${FIVE_HOUR_USED_FMT} | 📆 7d ${BOLD}${SEVEN_DAY_COLOR}${SEVEN_DAY_BAR}${RESET} ${SEVEN_DAY_USED_FMT}"
+LINE_ONE="🤖 ${MAGENTA}$MODEL${RESET} ${CYAN}($CONTEXT_WINDOW_SIZE_FMT)${RESET} | 🧠 ${BOLD}${BAR_COLOR}$BAR${RESET} ${BOLD}${BAR_COLOR}[$PCT%]${RESET} | ⏰ 5h ${BOLD}${FIVE_HOUR_COLOR}[${FIVE_HOUR_USED_FMT}]${RESET} ${FIVE_HOUR_RESET_FMT} | 📆 7d ${BOLD}${SEVEN_DAY_COLOR}[${SEVEN_DAY_USED_FMT}]${RESET} ${SEVEN_DAY_RESET_FMT}"
 
 LINE_TWO="📂 ${BOLD}$(basename "$PWD")${RESET} $GIT_INFO"
 
