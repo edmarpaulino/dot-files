@@ -1,0 +1,83 @@
+# Tipografia (Essencial para Oh My Posh)
+font-family = "JetBrainsMono Nerd Font"
+font-size = 18
+font-feature = calt
+font-feature = liga
+
+# Estética macOS
+# theme = dark
+background-opacity = 1
+background-blur-radius = 20
+window-padding-x = 8
+window-padding-y = 8
+window-decoration = true
+
+# Integração com Shell
+command = /bin/zsh --login
+
+# Cursor e Mouse
+cursor-style = bar
+cursor-style-blink = true
+mouse-hide-while-typing = true
+
+# Atalhos úteis (Split de tela estilo VS Code)
+# Navegar entre splits usando Command + HJKL
+keybind = cmd+h=goto_split:left
+keybind = cmd+j=goto_split:bottom
+keybind = cmd+k=goto_split:top
+keybind = cmd+l=goto_split:right
+
+keybind = cmd+shift+h=resize_split:left,10
+keybind = cmd+shift+j=resize_split:down,10
+keybind = cmd+shift+k=resize_split:up,10
+keybind = cmd+shift+l=resize_split:right,10
+
+# Tema Monokai Stone
+# palette = 0=#2A2D33
+# palette = 1=#fc6a67
+# palette = 2=#a9dc76
+# palette = 3=#ffd866
+# palette = 4=#78dce8
+# palette = 5=#e991e3
+# palette = 6=#78e8c6
+# palette = 7=#9AA2A6
+# palette = 8=#6B7277
+# palette = 9=#ff6188
+# palette = 10=#b7d175
+# palette = 11=#fc9867
+# palette = 12=#78dce8
+# palette = 13=#ab9df2
+# palette = 14=#78e8c6
+# palette = 15=#ffffff
+# background = #2A2D33
+# foreground = #9AA2A6
+# selection-background = #5A616E
+# cursor-color = #9AA2A6
+
+# Tema Monokai Metallian
+palette = 0=#1e212b
+palette = 1=#fc6a67
+palette = 2=#a9dc76
+palette = 3=#ffd866
+palette = 4=#78dce8
+palette = 5=#e991e3
+palette = 6=#78e8c6
+palette = 7=#98a2b5
+palette = 8=#687182
+palette = 9=#ff6188
+palette = 10=#b7d175
+palette = 11=#fc9867
+palette = 12=#78dce8
+palette = 13=#ab9df2
+palette = 14=#78e8c6
+palette = 15=#ffffff
+background = #1e212b
+foreground = #98a2b5
+selection-background = #40475c
+cursor-color = #98a2b5
+
+
+# theme = TokyoNight
+
+
+
