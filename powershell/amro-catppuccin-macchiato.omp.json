@@ -1,35 +1,45 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "green": "#a6da95",
+    "subtext": "#a5adcb",
+    "sky": "#91d7e3",
+    "mauve": "#c6a0f6",
+    "peach": "#f5a97f",
+    "yellow": "#eed49f",
+    "red": "#ed8796",
+    "pink": "#f5bde6"
+  },
   "blocks": [
     {
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#a6da95",
+          "foreground": "p:green",
           "style": "plain",
           "type": "session",
-          "template": "{{ if eq .OS \"darwin\" }}\uf179 {{ else if eq .Shell \"pwsh\" }}\ue70f {{ else }}\uf17c {{ end }}{{ .UserName }} <#a5adcb>on</> "
+          "template": "{{ if eq .OS \"darwin\" }} {{ else if eq .Shell \"pwsh\" }} {{ else }} {{ end }}{{ .UserName }} <p:subtext>on</> "
         },
         {
-          "foreground": "#91d7e3",
+          "foreground": "p:sky",
           "properties": {
             "folder_separator_icon": "/",
             "style": "agnoster_full",
             "home_icon": "~"
           },
           "style": "plain",
-          "template": "\uf07b {{ .Path }} ",
+          "template": " {{ .Path }} ",
           "type": "path"
         },
         {
-          "foreground": "#c6a0f6",
+          "foreground": "p:mauve",
           "style": "plain",
           "type": "git",
           "properties": {
             "fetch_status": true,
             "fetch_upstream_icon": true
           },
-          "template": "\uf09b {{ .HEAD }}{{ if .Working.Changed }} <#f5a97f>\uf044 {{ .Working.String }}</>{{ end }}{{ if .Staging.Changed }} <#a6da95>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <#eed49f>\ueb4b {{ .StashCount }}</>{{ end }} "
+          "template": " {{ .HEAD }}{{ if .Working.Changed }} <p:peach> {{ .Working.String }}</>{{ end }}{{ if .Staging.Changed }} <p:green> {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <p:yellow> {{ .StashCount }}</>{{ end }} "
         }
       ],
       "type": "prompt"
@@ -39,13 +49,13 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#ed8796",
+          "foreground": "p:red",
           "style": "plain",
-          "template": "\ue3bf ",
+          "template": " ",
           "type": "root"
         },
         {
-          "foreground": "#f5bde6",
+          "foreground": "p:pink",
           "style": "plain",
           "template": "# ",
           "type": "text"
